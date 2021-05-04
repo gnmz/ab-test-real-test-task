@@ -2,8 +2,10 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const path = require("path");
+const { connect } = require("http2");
 const publicPath = path.join(__dirname, "build");
 
+app.use(express.static(publicPath));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
@@ -12,10 +14,6 @@ const connection = require("./config/connection");
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(publicPath, "index.html"));
-});
-
-app.listen(process.env.PORT || 3001, () => {
-  console.log("Server is running");
 });
 
 app.get("/get-all", (req, res) => {
@@ -71,6 +69,10 @@ app.post("/add-data", (req, res) => {
         .send({ message: `Введите данные для отправки на сервер` });
     }
   });
+});
+
+app.listen(process.env.PORT || 3001, () => {
+  console.log("Server is running");
 });
 
 connection.connect((err) => {

@@ -1,0 +1,32 @@
+.nav-sidebar {
+  background: #ffffff;
+  box-shadow: 4px 0px 10px rgba(93, 109, 151, 0.1);
+  width: 15%;
+  min-height: 90vh;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-list-item {
+  height: 53px;
+  padding: 17px 53px;
+  list-style: none;
+  cursor: pointer;
+  border: 0.5px solid rgba(93, 110, 151, 0.4);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 18px;
+  color: #5d6d97;
+  box-sizing: inherit;
+}
+
+.nav-list-item:hover {
+  color: #4a9dff;
+}
+
+.nav-list-item:nth-child(-n + 3) {
+  border-bottom: none;
+}

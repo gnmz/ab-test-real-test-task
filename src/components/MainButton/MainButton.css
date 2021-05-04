@@ -1,0 +1,23 @@
+.main-btn {
+  display: block;
+  margin: 0 auto;
+  width: 189px;
+  height: 38px;
+  background: #4a9dff;
+  border-radius: 10px;
+  color: #ffffff;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+
+.main-btn:active {
+  margin-top: 2px;
+}
+
+.main-btn-wrapper {
+  width: 80%;
+}

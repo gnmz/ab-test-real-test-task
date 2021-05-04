@@ -1,0 +1,35 @@
+.calculate-data-btn {
+  display: block;
+  margin: 0 auto;
+  width: 189px;
+  height: 38px;
+  background: #4a9dff;
+  border-radius: 10px;
+  color: #ffffff;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+
+.calculate-data-btn:active {
+  margin-top: 2px;
+}
+
+.calculate-data-title {
+  margin-left: 60px;
+  font-size: 20px;
+  line-height: 23px;
+  text-transform: uppercase;
+  color: #5d6e97;
+  font-weight: 500;
+}
+
+.calculate-data-content {
+  height: 40px;
+  width: 80%;
+  margin: 40px 0;
+  text-align: center;
+}

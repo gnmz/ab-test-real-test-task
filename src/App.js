@@ -1,25 +1,82 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Header from "./components/Header/Header";
+import NavSidebar from "./components/NavSidebar/NavSidebar";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import "./App.css";
+import Table from "./components/Table/Table";
+
+export default class App extends Component {
+  state = {
+    data: [],
+    UserID: "",
+    DateRegistration: "",
+    DateLastActivity: "",
+    isAddOneMore: false,
+  };
+
+  saveDataHandler = () => {};
+
+  addOneMoreHandler = () => {
+    const {
+      isAddOneMore,
+      UserID,
+      DateRegistration,
+      DateLastActivity,
+      data,
+    } = this.state;
+    if (!isAddOneMore) {
+      this.setState({ isAddOneMore: true });
+    }
+    if (isAddOneMore) {
+      this.setState({
+        data: [
+          ...data,
+          {
+            UserID: UserID,
+            DateRegistration: DateRegistration,
+            DateLastActivity: DateLastActivity,
+          },
+        ],
+        UserID: "",
+        DateRegistration: "",
+        DateLastActivity: "",
+      });
+    }
+  };
+
+  userIdHandler = (e) => {
+    this.setState({ UserID: e.target.value });
+  };
+  dateRegistrationHandler = (e) => {
+    this.setState({ DateRegistration: e.target.value });
+  };
+  dateLastActivityHandler = (e) => {
+    this.setState({ DateLastActivity: e.target.value });
+  };
+
+  render() {
+    const {
+      UserID,
+      DateRegistration,
+      DateLastActivity,
+      data,
+      isAddOneMore,
+    } = this.state;
+    return (
+      <div className="app-wrapper">
+        <Header />
+        <div className="main">
+          <NavSidebar />
+          <Table
+            data={data}
+            isAddOneMore={isAddOneMore}
+            UserID={UserID}
+            addOneMoreHandler={this.addOneMoreHandler}
+            DateRegistration={DateRegistration}
+            DateLastActivity={DateLastActivity}
+          />
+        </div>
+      </div>
+    );
+  }
 }
-
-export default App;

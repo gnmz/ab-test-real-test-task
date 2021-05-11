@@ -1,4 +1,4 @@
-#AB TEST REAL (test task)
+# AB TEST REAL (test task).
 
 Stack (React, Node.js, MySQL)
 

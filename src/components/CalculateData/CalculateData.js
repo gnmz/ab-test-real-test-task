@@ -30,7 +30,8 @@ export class CalculateData extends Component {
         <h2 className="calculate-data-title">Rolling Retention 7 day</h2>
         {isFetchData ? (
           <div className="calculate-data-content">
-            {rollingRetation.toFixed(2)}% пользователей вернулось за 7 дней
+            {rollingRetation.toFixed(2)}% пользователей вернулось через 7 и
+            более дней
           </div>
         ) : (
           <div className="calculate-data-content"></div>

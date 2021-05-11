@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const path = require("path");
-const { connect } = require("http2");
 const publicPath = path.join(__dirname, "build");
 
 app.use(express.static(publicPath));
